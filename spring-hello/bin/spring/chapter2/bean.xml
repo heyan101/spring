@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd" >
+
+<beans>
+    <bean id="role" class="spring.chapter2.Role" >
+        <property name="name" value="Mary" />
+        <property name="health" value="100" />
+        <property name="goods" >
+	        <list>
+	            <ref bean="medicine" />
+	            <ref bean="medicine2" />
+	        </list>
+        </property>
+    </bean>
+    
+    <bean id="medicine" class="spring.chapter2.Medicine" >
+        <property name="name" value="小药丸" />
+        <property name="blood" value="10" />
+    </bean>
+    <bean id="medicine2" class="spring.chapter2.Medicine" >
+        <property name="name" value="大药丸" />
+        <property name="blood" value="20" />
+    </bean>
+</beans>

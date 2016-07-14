@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd" >
+
+<beans>
+    <bean id="role" class="spring.chapter2.Role" >
+        <property name="name" value="Mary" />
+        <property name="health" value="100" />
+        <property name="goods" >
+            <list>
+                <ref bean="medicine" />
+                <ref bean="medicine2" />
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="medicine" class="spring.chapter2.Medicine" >
+        <property name="name" value="小药丸" />
+        <property name="blood" value="10" />
+    </bean>
+    
+    <bean id="medicine2" class="spring.chapter2.Medicine" >
+        <property name="name" value="人参" />
+        <property name="blood" value="15" />
+    </bean>
+    
+    <bean id="poison" class="spring.chapter2.Medicine" >
+        <property name="name" value="毒蘑菇" />
+        <property name="blood" value="-10" />
+    </bean>
+    
+    <bean id="poison2" class="spring.chapter2.Medicine" >
+        <property name="name" value="鹤顶红" />
+        <property name="blood" value="-15" />
+    </bean>
+    
+    <bean id="medicineBox" class="spring.chapter2.constructorDemo.MedicineBoxByConstructor" >
+        <constructor-arg>
+            <list>
+                <ref bean="medicine" />
+                <ref bean="medicine2" />
+            </list>
+        </constructor-arg>
+    </bean>
+    
+    <bean id="poisonBox" class="spring.chapter2.constructorDemo.PoisonBoxByConstructor" >
+        <constructor-arg>
+            <list>
+                <ref bean="poison" />
+                <ref bean="poison2" />
+            </list>
+        </constructor-arg>
+    </bean>
+    
+    <bean id="nullBox" class="spring.chapter2.setDemo.NullBox" />
+</beans>
